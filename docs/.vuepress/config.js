@@ -126,7 +126,8 @@ module.exports = {
     }],
 
     'vuepress-plugin-baidu-autopush', // 百度自动推送
-
+    'vuepress-plugin-mermaidjs', // mermaidjs markdown 作图
+    'vuepress-plugin-mathjax',
     ['one-click-copy', { // 代码块复制按钮
       copySelector: ['div[class*="language-"] pre', 'div[class*="aside-code"] aside'], // String or Array
       copyMessage: '复制成功', // default is 'Copy successfully and then paste it for use.'
@@ -172,11 +173,11 @@ module.exports = {
       {
         choosen: 'gitalk',
         options: {
-          clientID: 'a6e1355287947096b88b',
-          clientSecret: 'f0e77d070fabfcd5af95bebb82b2d574d7248d71',
-          repo: 'blog-gitalk-comment', // GitHub 仓库
-          owner: 'xugaoyi', // GitHub仓库所有者
-          admin: ['xugaoyi'], // 对仓库有写权限的人
+          clientID: 'df48b608fbe1087b86b8',
+          clientSecret: '8d63b426b530b3656283820095987a495714b960',
+          repo: 'PPsteven.github.io', // GitHub 仓库
+          owner: 'ppsteven', // GitHub仓库所有者
+          admin: ['ppsteven'], // 对仓库有写权限的人
           // distractionFreeMode: true,
           pagerDirection: 'last', // 'first'正序 | 'last'倒序
           id: "<%- (frontmatter.permalink || frontmatter.to.path).slice(-16) %>", //  页面的唯一标识,长度不能超过50

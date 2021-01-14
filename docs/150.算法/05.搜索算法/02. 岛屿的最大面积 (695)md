@@ -1,0 +1,58 @@
+---
+title: 695. 岛屿的最大面积(Easy)
+date: 2020-12-04 16:11:57
+permalink: /pages/f0741c/
+categories:
+  - 算法
+  - 搜索算法
+tags:
+  - 
+---
+
+
+
+## 题目描述
+
+给定一个二维的 0-1 矩阵，其中 0 表示海洋，1 表示陆地。单独的或相邻的陆地可以形成岛 屿，每个格子只与其上下左右四个格子相邻。求最大的岛屿面积。
+
+## 样例
+
+```
+Input: [[1,0,1,1,0,1,0,1],
+        [1,0,1,1,0,1,1,1], 
+        [0,0,0,0,0,0,0,1]] 
+Output: 6
+```
+
+## 题目解析
+
+此题使用深度搜索寻找岛屿的最大面积：
+
+- 主函数：寻找未被访问过的岛屿（看做登陆）
+- 父函数：搜索上下左右四个方向，求岛屿的面积（看做测量）
+
+## Python 代码示例
+
+```python
+class Solution:
+    def maxAreaOfIsland(self, grid: List[List[int]]) -> int:
+        # 辅函数
+        def getArea(grid, i, j):
+            if i >= n or i < 0 or j >= m or j < 0 or grid[i][j] == 0 or (i, j) in visited: return 0
+            visited.append((i, j))
+            return getArea(grid, i + 1, j) + getArea(grid, i, j + 1) + \
+                   getArea(grid, i - 1, j) + getArea(grid, i, j - 1) + 1
+
+        n, m = len(grid), len(grid[0])
+        visited = []
+        maxArea = 0
+        
+        # 主函数
+        for i in range(n):
+            for j in range(m):
+                if grid[i][j] == 1 and (i, j) not in visited:
+                    maxArea = max(maxArea, getArea(grid, i, j))
+        return maxArea
+
+```
+

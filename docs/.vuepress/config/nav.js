@@ -2,7 +2,7 @@ module.exports = [
   {text: '首页', link: '/'},
   {
     text: '后端',
-    link: '/backend/',  //目录页链接，此处link是vdoing主题新增的配置项，有二级导航时，可以点击一级导航跳到目录页
+    // link: '/backend/',  //目录页链接，此处link是vdoing主题新增的配置项，有二级导航时，可以点击一级导航跳到目录页
     items: [
       {text: '后端', items: [
         {text: 'Docker', link: '/pages/e7311f/'}, // 这些link是在相应md文件定义的永久链接。另外，注意结尾是有斜杠的
@@ -13,25 +13,45 @@ module.exports = [
     ]
   },
   {
-    text: '算法', 
-    link: '/algorithm/',
+    text: '前端',
     items: [
-      {text: 'LeetCode', link: '/pages/db3414/'},
-      {text: '剑指Offer', link: '/pages/bfb1e1/'},
+      {text: 'Vue', items: [
+        {text: 'vue-todos 学习', link: '/pages/f9f7ec/'},
+      ]},
+    ],
+  },
+  {
+    text: '数据结构与算法', 
+    // link: '/algorithm/',
+    items: [
+      {text: '数据结构', items: [
+        {text: '贪心算法', link: '/pages/b248c0/'},
+        {text: '双指针与滑动窗口', link: '/pages/9410cd/'},
+       ]},
+    ]
+  },
+  {
+    text: '计算机基础知识',
+    items: [
+      {
+        text: '计算机网络', items: [
+          {text: '《图解HTTP》笔记', link: '/pages/c9e990/'}
+        ],
+      }
     ]
   },
   {
     text: 'Python',
-    link: '/python/',
+    // link: '/python/',
     items: [
       {text: 'Python', items: [
-        {text: 'Python', 'link': 'pages/a583c4/'},
+        {text: 'Python', 'link': '/pages/a583c4/'},
       ]},
     ],
   },
   {
     text: 'CheetSheet',
-    link: '/CheetSheet/',
+    // link: '/CheetSheet/',
     items: [
       {text: 'docker', link: '/pages/3f6ec3/'},
       {text: 'git', link: '/pages/752e0b/'},
